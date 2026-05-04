@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{p.nombre}} | GvO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        body { background: #f8f9fa; color: #1d3557; font-family: 'Poppins', sans-serif; }
+        
+        .product-wrap { 
+            background: #ffffff; 
+            border-radius: 24px; /* Contorno general más suave */
+            border: 1px solid #f1f1f1;
+            padding: 40px; 
+            margin-top: 10px; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.06); 
+        }
+        
+        .img-showcase { 
+            background: #f8f9fa; /* Fondo tenue para dar contraste al envase/producto */
+            border-radius: 16px; 
+            border: 1px solid #e9ecef;
+            display: flex; justify-content: center; align-items: center; 
+            padding: 30px; 
+        }
+        .img-showcase img {
+            width: 100%;
+            height: auto;
+            max-height: 450px;
+            object-fit: contain;
+        }
+        
+        .btn-whatsapp { 
+            background: #25D366; color: white; font-weight: 800; padding: 18px; 
+            border-radius: 14px; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.25);
+        }
+        .btn-whatsapp:hover { 
+            background: #1ebc59; 
+            transform: translateY(-3px); 
+            color: white; 
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4); 
+        }
+        
+        .back-link { transition: transform 0.3s ease; display: inline-block; }
+        .back-link:hover { transform: translateX(-5px); }
+    </style>
+</head>
+<body class="py-4">
+    <div class="container">
+        <a href="javascript:history.back()" class="text-danger text-decoration-none fw-bold mb-3 back-link">← Volver al catálogo</a>
+        
+        <div class="product-wrap">
+            <div class="row align-items-center g-5">
+                <div class="col-md-6 text-center">
+                    <div class="img-showcase">
+                        <img src="/static/{{p.img}}" class="img-fluid" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <span class="badge bg-danger mb-3 px-3 py-2" style="border-radius: 8px;">Stock Disponible</span>
+                    <h1 class="display-5 fw-bold text-dark">{{p.nombre}}</h1>
+                    <h2 class="text-danger fw-bold my-3" style="font-size: 2.5rem;">{{p.precio}}</h2>
+                    
+                    <div class="bg-light p-4 rounded-3 border mb-4">
+                        <p class="fs-6 text-secondary mb-0" style="line-height: 1.6;">{{p.detalle}}</p>
+                    </div>
+                    
+                    <a href="https://wa.me/5358870159?text=Hola, quiero comprar el {{p.nombre}} de la tienda Motriz." class="btn btn-whatsapp w-100 d-block text-center text-decoration-none">
+                        COMPRAR POR WHATSAPP
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
