@@ -5,58 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{coleccion.nombre}} | GvO</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { background: #f8f9fa; color: #1d3557; font-family: 'Poppins', sans-serif; }
+        body { 
+            background: linear-gradient(rgba(5, 5, 5, 0.85), rgba(5, 5, 5, 0.95)), 
+                        url('https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80&w=2069');
+            background-size: cover; background-position: center; background-attachment: fixed;
+            color: white; font-family: 'Inter', sans-serif; 
+        }
+        .back-link { color: #d4af37; text-decoration: none; font-weight: 600; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+        .back-link:hover { padding-left: 8px; color: white; }
         
-        /* LOADER */
-        #loader-wrapper { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; display: flex; justify-content: center; align-items: center; z-index: 10000; transition: opacity 0.5s; }
-        .spinner-ring { width: 70px; height: 70px; border: 5px solid #f3f3f3; border-top: 5px solid #e63946; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto; }
-        .oil-drop { width: 18px; height: 18px; background: #f1c40f; border-radius: 0 50% 50% 50%; transform: rotate(45deg); margin: -48px auto 30px; animation: pulse-drop 1.5s infinite; }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        @keyframes pulse-drop { 0%, 100% { transform: rotate(45deg) scale(1); } 50% { transform: rotate(45deg) scale(1.2); } }
-        .loader-hidden { opacity: 0; visibility: hidden; }
-
-        .back-link { color: #e63946; text-decoration: none; font-weight: 500; display: inline-block; transition: 0.3s ease; }
-        .back-link:hover { transform: translateX(-5px); color: #d62828; }
-        .item-box { background: #ffffff; border-radius: 16px; border: 1px solid #eaeaea; box-shadow: 0 4px 12px rgba(0,0,0,0.03); transition: all 0.4s ease; cursor: pointer; }
-        .item-box:hover { transform: translateY(-6px); box-shadow: 0 12px 25px rgba(230, 57, 70, 0.12); border-color: #e63946; }
-        .item-img { height: 220px; width: 100%; display: flex; align-items: center; justify-content: center; padding: 15px; }
-        .item-img img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.4s ease; }
+        .item-box { 
+            background: rgba(20, 20, 20, 0.7); backdrop-filter: blur(10px);
+            border-radius: 20px; border: 1px solid rgba(255, 215, 0, 0.1);
+            transition: 0.4s; cursor: pointer; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+        .item-box:hover { transform: translateY(-8px); border-color: #d4af37; box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15); }
+        
+        .item-img { height: 220px; display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .item-img img { max-height: 100%; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.8)); transition: 0.4s; }
         .item-box:hover .item-img img { transform: scale(1.08); }
-        .price { font-size: 1.4rem; font-weight: 600; color: #e63946; }
+        
+        .price { font-size: 1.6rem; font-weight: 900; color: #ff3131; font-family: 'Orbitron', sans-serif; }
     </style>
 </head>
-<body class="py-4">
-    <div id="loader-wrapper"><div class="text-center"><div class="spinner-ring"></div><div class="oil-drop"></div></div></div>
-
+<body class="py-5">
     <div class="container">
-        <a href="/" class="back-link mb-3">← Regresar al Inicio</a>
-        <h2 class="fw-bold mb-4 text-uppercase border-bottom pb-2">{{coleccion.nombre}}</h2>
+        <a href="/" class="back-link mb-4 d-inline-block">← Regresar al Inicio</a>
+        <h2 class="fw-bold mb-5 text-uppercase" style="font-family: 'Orbitron'; letter-spacing: 2px; color: #d4af37;">{{coleccion.nombre}}</h2>
         
-        <div class="row row-cols-2 row-cols-md-4 g-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
             {% for p in items %}
             <div class="col" onclick="location.href='/producto/{{p.id}}'">
-                <div class="item-box p-3 h-100 d-flex flex-column justify-content-between text-center">
-                    <div>
-                        <div class="item-img mb-2">
-                            <img src="/static/{{p.img}}" class="img-fluid" loading="lazy">
-                        </div>
-                        <h6 class="fw-bold text-dark">{{p.nombre}}</h6>
+                <div class="item-box p-4 h-100 d-flex flex-column text-center">
+                    <div class="item-img mb-3">
+                        <img src="/static/{{p.img}}" class="img-fluid">
                     </div>
-                    <div class="mt-2">
-                        <p class="price mb-1">{{p.precio}}</p>
-                        <span class="badge bg-light text-secondary border">Ver detalles</span>
-                    </div>
+                    <h5 class="fw-bold mb-2 text-white">{{p.nombre}}</h5>
+                    <p class="price mt-auto mb-3">{{p.precio}}</p>
+                    <span class="badge w-100 py-2" style="background: rgba(212, 175, 55, 0.2); color: #d4af37; border: 1px solid #d4af37;">VER DETALLES</span>
                 </div>
             </div>
             {% endfor %}
         </div>
     </div>
-    <script>
-        window.addEventListener("load", function() {
-            setTimeout(() => { document.getElementById("loader-wrapper").classList.add("loader-hidden"); }, 500);
-        });
-    </script>
 </body>
 </html>
