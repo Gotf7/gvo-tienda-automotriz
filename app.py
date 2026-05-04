@@ -56,6 +56,7 @@ Resistencia: Es resistente al agua y a la humedad, lo que la hace ideal para equ
 Reducción de Desgaste: Ayuda a reducir el desgaste y la fricción en componentes críticos como rodamientos y ejes.
 
 Aplicaciones Comunes: Se recomienda para excavadoras, cargadores frontales, tractores agrícolas, grúas y maquinaria industrial en general."""},
+
         {"id": 5, "col_id": "grasas", "nombre": "Grasa Azul Multiuso", "precio": "$5000cup", "img": "Grasa Azul Multiuso.png", "detalle": """Motisi Blue Multiuse Solid Grease. Esta es una grasa lubricante que utiliza una fórmula a base de litio, diseñada para aplicaciones que requieren resistencia a altas temperaturas y presiones extremas.
 
 Aunque la publicidad menciona 'Tecnología Japonesa', los anuncios clasificados indican que es una marca comúnmente comercializada en Cuba, especialmente en La Habana. La imagen en sí misma muestra indicios de haber sido generada o modificada mediante inteligencia artificial (como se detectó mediante análisis de huellas digitales digitales).
@@ -68,15 +69,14 @@ Multiuso: Apta para rodamientos de alta temperatura, chasis de vehículos, maqui
 
 Resistencia: Formulada para soportar el lavado por agua, la corrosión y la oxidación.
 
-Consistencia: Al ser una grasa de litio azul, suele tener una textura suave pero pegajosa que garantiza que el lubricante permanezca en su lugar bajo cargas pesadas."""
+Consistencia: Al ser una grasa de litio azul, suele tener una textura suave pero pegajosa que garantiza que el lubricante permanezca en su lugar bajo cargas pesadas."""},
     {"id": 6, "col_id": "octane", "nombre": "Octane Booster Pro", "precio": "$2500", "img": "Octane.png", "detalle": """ MOTISI Octane Booster (modelo MZ323), un aditivo para combustible diseñado para mejorar el rendimiento del motor. Viene en una presentación de 400 ml y se promociona para su uso en motores de gasolina. 
 Características y beneficios del producto
 Según la publicidad y descripciones comerciales, este producto ofrece los siguientes beneficios:
 Aumento de octanaje: Incrementa la potencia y maximiza el rendimiento del motor.
 Aceleración mejorada: Optimiza la respuesta del acelerador, especialmente en rangos de carga baja y media.
 Prevención de cascabeleo: Ayuda a prevenir detonaciones prematuras que pueden dañar el motor.
-Limpieza del sistema: Contribuye a la limpieza de los inyectores y del sistema de combustible. 
-
+Limpieza del sistema: Contribuye a la limpieza de los inyectores y del sistema de combustible.
 """}
 ]
 
