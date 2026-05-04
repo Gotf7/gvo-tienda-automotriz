@@ -3,85 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GvO Motriz | Premium Performance</title>
+    <title>GvO Motriz | High Performance</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <style>
-        :root { --accent-red: #e63946; --bg-light: #f8f9fa; --text-dark: #1d3557; }
-        body { background-color: var(--bg-light); color: var(--text-dark); font-family: 'Poppins', sans-serif; }
+        :root { --red: #ff3131; --black: #0a0a0a; --dark-gray: #1a1a1a; --text-gray: #a0a0a0; }
+        body { background-color: var(--black); color: white; font-family: 'Inter', sans-serif; }
         
-        /* --- ESTILOS DEL LOADER GvO --- */
-        #loader-wrapper {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: #ffffff; display: flex; justify-content: center; align-items: center;
-            z-index: 10000; transition: opacity 0.6s ease, visibility 0.6s;
-        }
-        .loader-content { text-align: center; }
-        .spinner-ring {
-            width: 90px; height: 90px; border: 6px solid #f3f3f3;
-            border-top: 6px solid var(--accent-red); border-radius: 50%;
-            animation: spin 1s linear infinite; margin: 0 auto;
-        }
-        .oil-drop {
-            width: 24px; height: 24px; background: #f1c40f;
-            border-radius: 0 50% 50% 50%; transform: rotate(45deg);
-            margin: -60px auto 40px; animation: pulse-drop 1.5s ease-in-out infinite;
-        }
-        .loader-text { font-family: 'Orbitron', sans-serif; font-size: 1.4rem; letter-spacing: 3px; margin-top: 20px; color: var(--text-dark); }
-        .loader-text span { color: var(--accent-red); }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        @keyframes pulse-drop { 0%, 100% { transform: rotate(45deg) scale(1); } 50% { transform: rotate(45deg) scale(1.2); } }
-        .loader-hidden { opacity: 0; visibility: hidden; }
-        /* ------------------------------ */
-
         header { 
-            height: 55vh; display: flex; align-items: center; justify-content: center;
+            height: 60vh; display: flex; align-items: center; justify-content: center;
             flex-direction: column; text-align: center;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(248, 249, 250, 1)), 
-                        url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1000');
-            background-size: cover; background-position: center; border-bottom: 3px solid var(--accent-red);
+            background: linear-gradient(rgba(0,0,0,0.7), var(--black)), 
+                        url('https://images.unsplash.com/photo-1486497395402-74117e35b710?q=80&w=2070');
+            background-size: cover; background-position: center;
         }
-        .logo-main { text-shadow: 2px 4px 10px rgba(0,0,0,0.3); font-size: clamp(2.2rem, 8vw, 4rem); font-family: 'Orbitron', sans-serif; color: #111; line-height: 1.1; }
-        .logo-main span { color: var(--accent-red); display: block; margin-top: 5px; }
 
-        .cat-card { background: #ffffff; border: 1px solid rgba(0,0,0,0.05); border-radius: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.04); overflow: hidden; transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); cursor: pointer; }
-        .cat-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(230, 57, 70, 0.15); border-color: rgba(230, 57, 70, 0.3); }
-        .img-wrapper { height: 350px; width: 100%; padding: 25px; display: flex; align-items: center; justify-content: center; background: #fff; }
-        .img-wrapper img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.5s ease; }
-        .cat-card:hover img { transform: scale(1.08); }
-        .btn-action { background: var(--accent-red); color: white; font-weight: 600; border-radius: 0 0 20px 20px; padding: 14px; border: none; letter-spacing: 0.5px; transition: 0.3s ease; }
+        .logo-main { 
+            font-family: 'Orbitron', sans-serif; font-size: clamp(2.5rem, 10vw, 5rem); 
+            letter-spacing: 2px; color: white;
+        }
+        .logo-main span { color: var(--red); text-shadow: 0 0 20px rgba(255, 49, 49, 0.5); }
+
+        .cat-card {
+            background: var(--dark-gray); border: 1px solid #333;
+            border-radius: 15px; overflow: hidden; transition: 0.4s;
+            cursor: pointer; position: relative;
+        }
+        .cat-card:hover { transform: translateY(-10px); border-color: var(--red); }
+        
+        .img-wrapper { 
+            height: 300px; padding: 20px; background: radial-gradient(circle, #222 0%, #111 100%);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .img-wrapper img { max-height: 100%; transition: 0.5s; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5)); }
+        .cat-card:hover img { transform: scale(1.1) rotate(2deg); }
+        
+        .btn-linea { 
+            background: var(--red); color: white; font-weight: 800; padding: 12px;
+            border: none; width: 100%; text-transform: uppercase; font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
-
-    <div id="loader-wrapper">
-        <div class="loader-content">
-            <div class="spinner-ring"></div>
-            <div class="oil-drop"></div>
-            <h2 class="loader-text">GvO <span>MOTRIZ</span></h2>
-            <p class="small text-muted text-uppercase" style="letter-spacing: 2px;">Potencia en cada gota</p>
-        </div>
-    </div>
-
-    <header data-aos="fade-down" data-aos-duration="800">
-        <h1 class="logo-main">AUTOMOTRIZ <span>GvO</span></h1>
-        <p class="text-uppercase text-secondary fw-bold" style="letter-spacing: 1px;">Calidad y Rendimiento</p>
+    <header data-aos="zoom-out" data-aos-duration="1000">
+        <h1 class="logo-main">GvO <span>MOTRIZ</span></h1>
+        <p class="text-uppercase fw-light" style="letter-spacing: 4px; color: var(--text-gray);">Premium Lubricants & Care</p>
     </header>
 
     <div class="container py-5">
         <div class="row g-4">
             {% for c in colecciones %}
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="cat-card h-100 d-flex flex-column" onclick="location.href='/coleccion/{{c.id}}'">
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="cat-card h-100" onclick="location.href='/coleccion/{{c.id}}'">
                     <div class="img-wrapper">
-                        <img src="/static/{{c.img}}" class="img-fluid" loading="lazy" alt="{{c.nombre}}">
+                        <img src="/static/{{c.img}}" alt="{{c.nombre}}">
                     </div>
-                    <div class="p-4 text-center flex-grow-1">
-                        <h4 class="fw-bold">{{c.nombre}}</h4>
-                        <p class="text-muted small">{{c.desc}}</p>
+                    <div class="p-4">
+                        <h3 class="h5 fw-bold">{{c.nombre}}</h3>
+                        <p class="small text-muted">{{c.desc}}</p>
                     </div>
-                    <button class="btn-action w-100">VER LÍNEA</button>
+                    <button class="btn-linea">Explorar Catálogo</button>
                 </div>
             </div>
             {% endfor %}
@@ -89,14 +71,6 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init({ once: true });
-        // Script para quitar el loader
-        window.addEventListener("load", function() {
-            setTimeout(() => {
-                document.getElementById("loader-wrapper").classList.add("loader-hidden");
-            }, 800);
-        });
-    </script>
+    <script>AOS.init({ once: true });</script>
 </body>
 </html>
