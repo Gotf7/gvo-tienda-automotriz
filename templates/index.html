@@ -11,81 +11,58 @@
         :root { --accent-red: #e63946; --bg-light: #f8f9fa; --text-dark: #1d3557; }
         body { background-color: var(--bg-light); color: var(--text-dark); font-family: 'Poppins', sans-serif; }
         
-                header { 
-            /* 1. Le damos más altura para que el carro se vea mejor */
-            height: 55vh; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center;
-            flex-direction: column; 
-            text-align: center;
-            
-            /* 2. Ajustamos el gradiente: el primer número (0.4) controla la claridad. 
-               Mientras más bajo sea, más se verá el carro. */
+        /* --- ESTILOS DEL LOADER GvO --- */
+        #loader-wrapper {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #ffffff; display: flex; justify-content: center; align-items: center;
+            z-index: 10000; transition: opacity 0.6s ease, visibility 0.6s;
+        }
+        .loader-content { text-align: center; }
+        .spinner-ring {
+            width: 90px; height: 90px; border: 6px solid #f3f3f3;
+            border-top: 6px solid var(--accent-red); border-radius: 50%;
+            animation: spin 1s linear infinite; margin: 0 auto;
+        }
+        .oil-drop {
+            width: 24px; height: 24px; background: #f1c40f;
+            border-radius: 0 50% 50% 50%; transform: rotate(45deg);
+            margin: -60px auto 40px; animation: pulse-drop 1.5s ease-in-out infinite;
+        }
+        .loader-text { font-family: 'Orbitron', sans-serif; font-size: 1.4rem; letter-spacing: 3px; margin-top: 20px; color: var(--text-dark); }
+        .loader-text span { color: var(--accent-red); }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes pulse-drop { 0%, 100% { transform: rotate(45deg) scale(1); } 50% { transform: rotate(45deg) scale(1.2); } }
+        .loader-hidden { opacity: 0; visibility: hidden; }
+        /* ------------------------------ */
+
+        header { 
+            height: 55vh; display: flex; align-items: center; justify-content: center;
+            flex-direction: column; text-align: center;
             background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(248, 249, 250, 1)), 
                         url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1000');
-            
-            background-size: cover; 
-            background-position: center; 
-            border-bottom: 3px solid var(--accent-red);
-            position: relative;
+            background-size: cover; background-position: center; border-bottom: 3px solid var(--accent-red);
         }
-
-        /* 3. Para que las letras no se pierdan con el carro, les daremos un toque de sombra */
-        .logo-main { 
-            text-shadow: 2px 4px 10px rgba(0,0,0,0.3);
-            font-size: clamp(2.2rem, 8vw, 4rem);
-        }
-
-        .logo-main { 
-            font-family: 'Orbitron', sans-serif; 
-            /* clamp(mínimo, preferido, máximo) - se adapta perfecto a móviles y PC */
-            font-size: clamp(2.2rem, 8vw, 4rem); 
-            color: #111; 
-            line-height: 1.1;
-        }
+        .logo-main { text-shadow: 2px 4px 10px rgba(0,0,0,0.3); font-size: clamp(2.2rem, 8vw, 4rem); font-family: 'Orbitron', sans-serif; color: #111; line-height: 1.1; }
         .logo-main span { color: var(--accent-red); display: block; margin-top: 5px; }
 
-
-        .cat-card {
-            background: #ffffff; 
-            border: 1px solid rgba(0,0,0,0.05); /* Contorno sutil */
-            border-radius: 20px; /* Bordes más redondeados y modernos */
-            box-shadow: 0 6px 15px rgba(0,0,0,0.04); 
-            overflow: hidden; 
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transición súper fluida */
-            cursor: pointer;
-        }
-        .cat-card:hover { 
-            transform: translateY(-8px); 
-            box-shadow: 0 15px 30px rgba(230, 57, 70, 0.15); 
-            border-color: rgba(230, 57, 70, 0.3); /* El borde resalta al pasar el mouse */
-        }
-        
-        .img-wrapper { 
-            height: 350px; /* Altura controlada */
-            width: 100%;
-            padding: 25px; 
-            display: flex; align-items: center; justify-content: center; 
-            background: #fff; 
-        }
-        .img-wrapper img { 
-            width: 100%;
-            height: 100%;
-            object-fit: contain; /* Evita que la imagen se estire o se corte */
-            transition: transform 0.5s ease; 
-        }
+        .cat-card { background: #ffffff; border: 1px solid rgba(0,0,0,0.05); border-radius: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.04); overflow: hidden; transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); cursor: pointer; }
+        .cat-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(230, 57, 70, 0.15); border-color: rgba(230, 57, 70, 0.3); }
+        .img-wrapper { height: 350px; width: 100%; padding: 25px; display: flex; align-items: center; justify-content: center; background: #fff; }
+        .img-wrapper img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.5s ease; }
         .cat-card:hover img { transform: scale(1.08); }
-        
-        .btn-action { 
-            background: var(--accent-red); color: white; font-weight: 600; 
-            border-radius: 0 0 20px 20px; /* Alineado con el borde de la tarjeta */
-            padding: 14px; border: none; letter-spacing: 0.5px; transition: 0.3s ease; 
-        }
-        .btn-action:hover { background: #d62828; color: white; }
+        .btn-action { background: var(--accent-red); color: white; font-weight: 600; border-radius: 0 0 20px 20px; padding: 14px; border: none; letter-spacing: 0.5px; transition: 0.3s ease; }
     </style>
 </head>
 <body>
+
+    <div id="loader-wrapper">
+        <div class="loader-content">
+            <div class="spinner-ring"></div>
+            <div class="oil-drop"></div>
+            <h2 class="loader-text">GvO <span>MOTRIZ</span></h2>
+            <p class="small text-muted text-uppercase" style="letter-spacing: 2px;">Potencia en cada gota</p>
+        </div>
+    </div>
 
     <header data-aos="fade-down" data-aos-duration="800">
         <h1 class="logo-main">AUTOMOTRIZ <span>GvO</span></h1>
@@ -112,6 +89,14 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>AOS.init({ once: true });</script>
+    <script>
+        AOS.init({ once: true });
+        // Script para quitar el loader
+        window.addEventListener("load", function() {
+            setTimeout(() => {
+                document.getElementById("loader-wrapper").classList.add("loader-hidden");
+            }, 800);
+        });
+    </script>
 </body>
 </html>

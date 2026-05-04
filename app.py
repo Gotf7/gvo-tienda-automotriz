@@ -11,7 +11,7 @@ colecciones = [
 
 # Inventario basado en tu collage
 productos = [
-    {"id": 1, "col_id": "aceites", "nombre": "Aceite SAE 10W-40", "precio": "$8500", "img": "Aceite SAE 10W-40.png", "detalle": """Aceite Sintético Multiuso Motisi SAE 10W-40, un lubricante diseñado para motores de gasolina y diésel. Se comercializa principalmente en Cuba (específicamente en regiones como La Habana y Marianao) en un formato de 5 litros. [1, 2, 3, 4]
+    {"id": 1, "col_id": "aceites", "nombre": "Aceite SAE 10W-40", "precio": "$14000", "img": "Aceite SAE 10W-40.png", "detalle": """Aceite Sintético Multiuso Motisi SAE 10W-40, un lubricante diseñado para motores de gasolina y diésel. Se comercializa principalmente en Cuba (específicamente en regiones como La Habana y Marianao) en un formato de 5 litros. [1, 2, 3, 4]
 
 Detalles del producto
 
@@ -22,7 +22,7 @@ Compatibilidad: Apto para motores de gasolina y diésel. Algunas especificacione
 Beneficios promocionados: La publicidad resalta una protección total, mayor eficiencia y un arranque en frío óptimo.
 
 """},
-    {"id": 2, "col_id": "aceites", "nombre": "Aceite SAE 15W-40", "precio": "$13500cup", "img": "Aceite SAE 15W-40.png", "detalle": """Aceite Sintético Multiuso MOTISI SAE 15W-40, un lubricante diseñado para motores de gasoil y gasolina. Este aceite utiliza 'Tecnología Japonesa' y cumple con las especificaciones API:CI-4/SL, lo que lo hace adecuado tanto para motores diésel de servicio pesado como para motores de gasolina de alto rendimiento. 
+    {"id": 2, "col_id": "aceites", "nombre": "Aceite SAE 15W-40", "precio": "$14000cup", "img": "Aceite SAE 15W-40.png", "detalle": """Aceite Sintético Multiuso MOTISI SAE 15W-40, un lubricante diseñado para motores de gasoil y gasolina. Este aceite utiliza 'Tecnología Japonesa' y cumple con las especificaciones API:CI-4/SL, lo que lo hace adecuado tanto para motores diésel de servicio pesado como para motores de gasolina de alto rendimiento. 
 
 Características Principales del Aceite MOTISI 15W-40:
 
@@ -33,7 +33,7 @@ Base Sintética: A diferencia de los aceites minerales convencionales, su formu
 Compatibilidad Dual: Está formulado para manejar los altos niveles de hollín y subproductos de combustión típicos de los motores diésel, mientras proporciona la fluidez necesaria para motores de gasolina.
 
 Presentación: Se comercializa comúnmente en envases sellados de 5 litros."""},
-    {"id": 3, "col_id": "aceites", "nombre": "Aceite SAE 20W-50", "precio": "$8500", "img": "Aceite SAE 20W-40.png", "detalle": """Aceite Motisi Sintético Multiuso SAE 20W-50, un lubricante diseñado para motores de gasolina y gasoil que ofrece una viscosidad adecuada para climas cálidos o motores con mayor kilometraje. 
+    {"id": 3, "col_id": "aceites", "nombre": "Aceite SAE 20W-50", "precio": "$14000", "img": "Aceite SAE 20W-40.png", "detalle": """Aceite Motisi Sintético Multiuso SAE 20W-50, un lubricante diseñado para motores de gasolina y gasoil que ofrece una viscosidad adecuada para climas cálidos o motores con mayor kilometraje. 
 
 Detalles del Producto
 
@@ -70,7 +70,7 @@ Multiuso: Apta para rodamientos de alta temperatura, chasis de vehículos, maqui
 Resistencia: Formulada para soportar el lavado por agua, la corrosión y la oxidación.
 
 Consistencia: Al ser una grasa de litio azul, suele tener una textura suave pero pegajosa que garantiza que el lubricante permanezca en su lugar bajo cargas pesadas."""},
-    {"id": 6, "col_id": "octane", "nombre": "Octane Booster Pro", "precio": "$2500", "img": "Octane.png", "detalle": """ MOTISI Octane Booster (modelo MZ323), un aditivo para combustible diseñado para mejorar el rendimiento del motor. Viene en una presentación de 400 ml y se promociona para su uso en motores de gasolina. 
+    {"id": 6, "col_id": "octane", "nombre": "Octane Booster Pro", "precio": "$3000", "img": "Octane.png", "detalle": """ MOTISI Octane Booster (modelo MZ323), un aditivo para combustible diseñado para mejorar el rendimiento del motor. Viene en una presentación de 400 ml y se promociona para su uso en motores de gasolina. 
 Características y beneficios del producto
 Según la publicidad y descripciones comerciales, este producto ofrece los siguientes beneficios:
 Aumento de octanaje: Incrementa la potencia y maximiza el rendimiento del motor.
